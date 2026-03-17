@@ -15,7 +15,7 @@ ACCOUNT_SID = os.getenv("ACCOUNT_SID")
 AUTH_TOKEN = os.getenv("AUTH_TOKEN")
 FROM_NUMBER = os.getenv("FROM_NUMBER")
 
-if not ACCOUNT_SID or not ACCOUNT_SID or not FROM_NUMBER:
+if not ACCOUNT_SID or not AUTH_TOKEN or not FROM_NUMBER:
     raise ValueError("Environment variables are not set")
 
 @app.post("/send-sms")
@@ -25,7 +25,6 @@ def send_sms():
     message = client.messages.create(
         body="Hello from FastAPI + Twilio!",
         from_=FROM_NUMBER,
-        to=TO_NUMBER
     )
 
     return {"status": "sent", "sid": message.sid}
