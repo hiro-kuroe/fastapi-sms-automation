@@ -1,6 +1,6 @@
 # FastAPI SMS Automation (Twilio)
 
-A simple SMS sending API built with FastAPI and Twilio.
+A FastAPI-based SMS automation API using Twilio, featuring batch sending and duplicate prevention.
 
 ## Features
 
